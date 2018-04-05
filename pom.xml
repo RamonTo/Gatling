@@ -64,7 +64,7 @@
                 <artifactId>gatling-maven-plugin</artifactId>
                 <version>2.2.4</version>
                 <configuration>
-                    <runMultipleSimulations>false</runMultipleSimulations>
+                    <runMultipleSimulations>true</runMultipleSimulations>
                     <!--<includes>-->
                         <!--<param>com.developers.perspective.simulation.RecordedSimulation</param>-->
                         <!--<param>com.developers.perspective.simulation.RecordedSimulation_another</param>-->
