@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%-5level] %logger{15} - %msg%n%rEx</pattern>
+        </encoder>
+        <immediateFlush>false</immediateFlush>
+    </appender>
+
+    <!-- Uncomment for logging ALL HTTP request and responses -->
+    <!-- 	<logger name="io.gatling.http.ahc" level="TRACE" /> -->
+    <!--    <logger name="io.gatling.http.response" level="TRACE" /> -->
+    <!-- Uncomment for logging ONLY FAILED HTTP request and responses -->
+    <!-- 	<logger name="io.gatling.http.ahc" level="DEBUG" /> -->
+    <!--    <logger name="io.gatling.http.response" level="DEBUG" /> -->
+
+    <root level="WARN">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
+
+        <!--<?xml version="1.0" encoding="UTF-8"?>-->
+        <!--<configuration debug="true">-->
+        <!--<contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">-->
+        <!--<resetJUL>false</resetJUL>-->
+        <!--</contextListener>-->
+        <!--<appender name="jdbc" class="ch.qos.logback.classic.db.DBAppender">-->
+        <!--&lt;!&ndash;<appender name="CONSOLE" class="ch.qos.logback.classic.core.ConsoleAppender">&ndash;&gt;-->
+        <!--<connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource">-->
+        <!--<driverClass>org.postgresql.Driver</driverClass>-->
+        <!--<url>jdbc:postgresql://192.168.99.100:5432/pgdb</url>-->
+        <!--<user>pguser</user>-->
+        <!--<password>pguser</password>-->
+        <!--<dialect>POSTGRES_DIALECT</dialect>-->
+        <!--</connectionSource>-->
+        <!--&lt;!&ndash;<encoder>&ndash;&gt;-->
+        <!--&lt;!&ndash;<pattern>%d{HH:mm:ss.SSS} [%-5level] %logger{15} - %msg%n%rEx</pattern>&ndash;&gt;-->
+        <!--&lt;!&ndash;<immediateFlush>false</immediateFlush>&ndash;&gt;-->
+        <!--&lt;!&ndash;</encoder>&ndash;&gt;-->
+        <!--</appender>-->
+        <!--&lt;!&ndash; Uncomment for logging ALL HTTP request and responses &ndash;&gt;-->
+        <!--<logger name="io.gatling.http" level="TRACE"/>-->
+        <!--&lt;!&ndash; Uncomment for logging ONLY FAILED HTTP request and responses &ndash;&gt;-->
+        <!--&lt;!&ndash; 	<logger name="io.gatling.http" level="DEBUG" /> &ndash;&gt;-->
+        <!--<root level="INFO">-->
+        <!--<appender-ref ref="jdbc"/>-->
+        <!--</root>-->
+        <!--</configuration>-->
