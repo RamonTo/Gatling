@@ -1,5 +1,6 @@
 package com.developers.perspective.scenarios
 
+import com.developers.perspective.util.BodyData
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 
@@ -28,16 +29,16 @@ object CubicContractServiceGet {
     "Content-Type" -> "text/xml; charset=utf-8"
   )
 
-  val getCubicCS = http("request_1")
+  val getCubicCS = http("getHouseInfo")
     .post("/contract-service/ContractService")
-    .body(StringBody(req))
+    .body(StringBody(BodyData.getHouseInfo))
     .headers(headers_0)
     .check(status.is(session => 200))
     .check(bodyString.saveAs("RESPONSE_DATA"))
 
-  val getCubicCS_another = http("request_2")
+  val getCubicCS_another = http("getContractsByFlatId")
     .post("/contract-service/ContractService")
-    .body(StringBody(req))
+    .body(StringBody(BodyData.getContractsByFlatId))
     .headers(headers_0)
     .check(status.is(session => 200))
     .check(bodyString.saveAs("RESPONSE_DATA"))
@@ -45,7 +46,7 @@ object CubicContractServiceGet {
   val getInfo = scenario("Cubic_Get_CS")
     .exec(getCubicCS)
 
-  val getInfo2 = scenario("Cubic_Get_CS2")
+  val getContractsByFlat = scenario("Cubic_Get_CS2")
     .exec(getCubicCS_another)
 
   //  val scnSearch = Constants.createScenario("Search", csvFeeder,

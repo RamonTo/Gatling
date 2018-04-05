@@ -65,10 +65,10 @@
                 <version>2.2.4</version>
                 <configuration>
                     <runMultipleSimulations>false</runMultipleSimulations>
-                    <includes>
-                        <param>com.developers.perspective.simulation.RecordedSimulation</param>
+                    <!--<includes>-->
+                        <!--<param>com.developers.perspective.simulation.RecordedSimulation</param>-->
                         <!--<param>com.developers.perspective.simulation.RecordedSimulation_another</param>-->
-                    </includes>
+                    <!--</includes>-->
                 </configuration>
                 <executions>
                     <execution>
@@ -80,15 +80,15 @@
                             <simulationClass>RecordedSimulation</simulationClass>
                         </configuration>
                     </execution>
-                    <!--<execution>-->
-                    <!--<id>execution2</id>-->
-                    <!--<goals>-->
-                    <!--<goal>integration-test</goal>-->
-                    <!--</goals>-->
-                    <!--<configuration>-->
-                    <!--<simulationClass>RecordedSimulation_another</simulationClass>-->
-                    <!--</configuration>-->
-                    <!--</execution>-->
+                    <execution>
+                        <id>execution2</id>
+                        <goals>
+                            <goal>integration-test</goal>
+                        </goals>
+                        <configuration>
+                            <simulationClass>RecordedSimulationGetContractByFlatId</simulationClass>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>

@@ -9,16 +9,10 @@ class RecordedSimulation extends Simulation {
 
   setUp(
     CubicContractServiceGet.getInfo.inject(
-      rampUsersPerSec(0) to 10 during (5 seconds), // 3
-      constantUsersPerSec(10) during (10 seconds), // 4
+      rampUsersPerSec(0) to 50 during (5 seconds), // 3
+      constantUsersPerSec(50) during (10 seconds), // 4
     )
       .protocols(CubicContractServiceGet.httpProtocol)
-
-    //    CubicContractServiceGet.getInfo2.inject(
-    //      rampUsersPerSec(3) to 50 during (5 seconds), // 3
-    //      constantUsersPerSec(100) during (30 seconds), // 4
-    //    )
-    //      .protocols(CubicContractServiceGet.httpProtocol)
   )
     .assertions(
       //      global.responseTime.max.lte(5000),
